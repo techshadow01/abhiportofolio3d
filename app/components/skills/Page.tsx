@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { Skill } from "./skills";
+import { Skill, tool, skilltype } from "./skills";
 
 const Page = () => {
   return (
@@ -11,12 +11,12 @@ const Page = () => {
         </h2>
       </div>
       <div className=" mx-auto max-lg:mx-2 max-w-[77rem]">
-        {Skill.map((item: any, index: number) => {
+        {Skill.map((item: skilltype, index: number) => {
           return (
             <div key={index} className="flex flex-col gap-4 mt-4">
               <div className="text-3xl text-white">{item.name}</div>
               <div className="grid grid-cols-4 max-md:grid-cols-3 max-sm:grid-cols-2 gap-2">
-                {item.src.map((item1: any, index1: number) => {
+                {item.src.map((item1: tool, index1: number) => {
                   return (
                     <div
                       key={index1}
