@@ -52,9 +52,12 @@ const addClassNameRecursively = (
   const foo = (child: ReactNode) => {
     if (!isValidElement(child)) return child;
 
-    return cloneElement(child, {
-      className: `${child.props.className || ""} ${className}`.trim(),
-      children: addClassNameRecursively(child.props.children, className),
+    return cloneElement(child as any, {
+      className: `${(child.props as any).className || ""} ${className}`.trim(),
+      children: addClassNameRecursively(
+        (child.props as any).children,
+        className
+      ),
     });
   };
   return Children.map(children, foo);
