@@ -44,22 +44,21 @@ export interface ButtonProps
   asChild?: boolean;
   children?: ReactNode;
 }
+type ElementWithClassName = { className?: string; children?: ReactNode };
 
 const addClassNameRecursively = (
   children: ReactNode,
   className: string
 ): ReactNode => {
-  const foo = (child: ReactNode) => {
-    if (!isValidElement(child)) return child;
+  const foo = (child: ReactNode): ReactNode => {
+    if (!isValidElement<ElementWithClassName>(child)) return child;
 
-    return cloneElement(child as any, {
-      className: `${(child.props as any).className || ""} ${className}`.trim(),
-      children: addClassNameRecursively(
-        (child.props as any).children,
-        className
-      ),
+    return cloneElement(child, {
+      className: `${child.props.className || ""} ${className}`.trim(),
+      children: addClassNameRecursively(child.props.children, className),
     });
   };
+
   return Children.map(children, foo);
 };
 
