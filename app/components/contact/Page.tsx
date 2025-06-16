@@ -1,5 +1,5 @@
 import React from "react";
-import Spline from "@splinetool/react-spline";
+// import Spline from "@splinetool/react-spline";
 import { HoverEffect } from "../animate/contacttile";
 import { projects } from "./contactdata";
 
@@ -11,10 +11,10 @@ const Page = () => {
       </h2>
       <div className="flex max-sm:flex-col items-center justify-around">
         <div className="relative overflow-hidden w-full max-w-[800px] aspect-square">
-          <Spline
+          {/* <Spline
             className="absolute w-full aspect-square top-[6%] max-sm:top-[12%]"
             scene="https://prod.spline.design/dgCbMiYRPgcOqPwm/scene.splinecode"
-          />
+          /> */}
         </div>
         {/* <div className="flex flex-col gap-6"> */}
         <HoverEffect items={projects} />
