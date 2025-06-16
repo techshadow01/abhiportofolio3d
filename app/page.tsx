@@ -1,7 +1,7 @@
 import React from "react";
 // import Navbar from "./components/navbar/Page";
 import Home from "./components/home/Page";
-// import Project from "./components/projects/Page";
+import Project from "./components/projects/Page";
 import Skills from "./components/skills/Page";
 // import Contact from "./components/contact/Page";
 import Experience from "./components/experience/Page";
@@ -17,7 +17,7 @@ const page = () => {
         <Home />
         <Experience />
         <Skills />
-        {/* <Project /> */}
+        <Project />
         {/* <Contact /> */}
       </SmoothScroll>
     </div>
