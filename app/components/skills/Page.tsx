@@ -25,7 +25,7 @@ const Page = () => {
                       <div
                         className={`p-2 items-center justify-center rounded-lg ${item1.color}`}
                       >
-                        <Image className="size-8" src={item1.img} alt="hello" />
+                        <Image className="size-8" src={item1.img} alt="hello"   width={10} />
                       </div>
                       <div>{item1.name}</div>
                     </div>
