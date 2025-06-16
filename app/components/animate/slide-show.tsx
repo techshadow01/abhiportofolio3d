@@ -9,12 +9,9 @@ import Image from "next/image";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "../animate/dialog";
-import { Button } from "../animate/button";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
