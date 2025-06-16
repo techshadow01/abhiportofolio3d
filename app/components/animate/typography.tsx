@@ -101,7 +101,6 @@ export function TypographyBlockquote({
   );
 }
 export function TypographyTable({
-  children,
   className,
 }: {
   children: ReactNode;
