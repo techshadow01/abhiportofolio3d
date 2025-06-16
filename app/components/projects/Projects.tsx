@@ -268,7 +268,7 @@ const projects: Project[] = [
         PROJECT_SKILLS.mongo,
       ],
     },
-    get content(): JSX.Element {
+    get content() {
       return (
         <div>
           <TypographyP className="font-mono ">
