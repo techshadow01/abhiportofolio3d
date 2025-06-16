@@ -1,8 +1,5 @@
 import React from "react";
-import { motion, animate } from "motion/react";
-import { RiGithubFill } from "react-icons/ri";
 import { RiLinkedinBoxFill } from "react-icons/ri";
-import { RiTwitterFill } from "react-icons/ri";
 import { Mail } from "lucide-react";
 
 const sidebar = () => {
