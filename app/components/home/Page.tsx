@@ -9,7 +9,7 @@ import Robot from "../../assets/robot.png";
 
 const Page = () => {
   return (
-    <div className="flex max-sm:flex-col-reverse  items-center justify-between max-sm:justify-around h-[calc(100vh-50px)] ">
+  <div className="flex max-sm:flex-col-reverse  items-center justify-between max-sm:justify-center max-sm:gap-5 h-[calc(100vh-50px)] ">
       <div className="flex flex-col justify-center  ml-[10%] max-sm:mx-auto max-sm:ml-0 gap-6">
         <span className="relative whitespace-nowrap inline-flex h-12 overflow-hidden rounded-full p-[1px] w-full max-sm:w-[90%] max-sm:mx-auto">
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
