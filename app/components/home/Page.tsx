@@ -4,6 +4,8 @@ import { Spotlight } from "../animate/spotlight";
 import ScrollDownIcon from "../animate/scroll-down-icon";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
+import Image from "next/image";
+import Robot from "../../assets/robot.png";
 
 const Page = () => {
   return (
@@ -40,8 +42,13 @@ const Page = () => {
       </div>
       <div className="relative overflow-hidden w-full aspect-square ">
         <Spline
-          className="absolute w-full aspect-square left-[20%] max-sm:left-4 -top-[4%] max-sm:top-0 max-sm:scale-[1.90]"
+          className="absolute w-full aspect-square left-[20%] max-sm:left-4 -top-[4%] max-sm:top-0 max-sm:scale-[1.90] max-sm:hidden"
           scene="https://prod.spline.design/tr1jyx882bfTUyLC/scene.splinecode"
+        />
+        <Image
+          className="absolute w-full aspect-square sm:hidden"
+          src={Robot}
+          alt="robot"
         />
       </div>
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-30">
