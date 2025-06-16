@@ -3,7 +3,7 @@ import AceTernityLogo from "../animate/aceternity";
 import SlideShow from "../animate/slide-show";
 import { Button } from "../animate/button";
 import { TypographyH3, TypographyP } from "../animate/typography";
-import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { RiNextjsFill, RiNodejsFill, RiReactjsFill } from "react-icons/ri";
@@ -31,7 +31,6 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 import Alicet from "./assets/Alice.png";
 import Crowdt from "./assets/swing.png";
 import Portofoliot from "./assets/portofolio.png";
-import Chatt from "./assets/chatbot.png";
 import Spotifyt from "./assets/spotify.png";
 import Tourwebt from "./assets/tourweb.png";
 
@@ -242,7 +241,7 @@ export type Project = {
   src: image;
   screenshots: string[];
   skills: { frontend: Skill[]; backend: Skill[] };
-  content: React.ReactNode | any;
+  content: React.ReactNode;
   github?: string;
   live?: string;
 };
@@ -274,17 +273,17 @@ const projects: Project[] = [
         <div>
           <TypographyP className="font-mono ">
             Swing is your all-in-one platform for powering passion projects
-            through community support. Whether you're launching your dream idea
-            or backing a cause you believe in, Swing makes it simple, social,
-            and seriously rewarding. No gatekeepers, no hassle — just real
-            people helping real visions take flight.
+            through community support. Whether you&#39;re launching your dream
+            idea or backing a cause you believe in, Swing makes it simple,
+            social, and seriously rewarding. No gatekeepers, no hassle &mdash;
+            just real people helping real visions take flight.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 ">Home Page</TypographyH3>
           <p className="font-mono mb-2">
             Explore a world of projects, each filled with unique rewards and
-            powerful stories. It’s like having a front-row seat to the future —
-            and a chance to help shape it.
+            powerful stories. It&#8217;s like having a front-row seat to the
+            future &mdash; and a chance to help shape it.
           </p>
           <SlideShow
             images={[
@@ -300,15 +299,15 @@ const projects: Project[] = [
           <TypographyH3 className="my-4 ">Light Mode</TypographyH3>
           <p className="font-mono mb-2">
             Each one offers unique rewards and meaningful stories. Be part of
-            what’s next — and help bring it to life.
+            what&#8217;s next &mdash; and help bring it to life.
           </p>
           <SlideShow images={[Swing[7], Swing[8], Swing[9], Swing[10]]} />
           <TypographyH3 className="my-4 mt-8">Dark Mode</TypographyH3>
 
           <p className="font-mono mb-2">
-            Discover bold ideas, powerful stories, and exclusive rewards — all
-            in one place. Back the projects that move you and help shape what’s
-            next.
+            Discover bold ideas, powerful stories, and exclusive rewards &mdash;
+            all in one place. Back the projects that move you and help shape
+            what&#8217;s next.
           </p>
           <SlideShow images={[Swing[11], Swing[12], Swing[13], Swing[14]]} />
         </div>
@@ -337,12 +336,12 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            Welcome to My Portfolio — a creative space built to showcase bold
-            ideas, thoughtful design, and meaningful work. Whether you're here
-            to explore past projects, collaborate on something new, or just get
-            inspired, this site is your open door. No fluff, no pretense — just
-            a collection of real work by someone who loves bringing ideas to
-            life.
+            Welcome to My Portfolio &mdash; a creative space built to showcase
+            bold ideas, thoughtful design, and meaningful work. Whether
+            you&#39;re here to explore past projects, collaborate on something
+            new, or just get inspired, this site is your open door. No fluff, no
+            pretense &mdash; just a collection of real work by someone who loves
+            bringing ideas to life.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <TypographyH3 className="my-4 ">Portofolio 1</TypographyH3>
@@ -509,9 +508,9 @@ const projects: Project[] = [
           <TypographyP className="font-mono ">
             Spotify is a vibrant platform for discovering, streaming, and
             sharing music. It offers curated playlists, artist profiles, and
-            personalized recommendations powered by AI. Whether you’re a casual
-            listener or a music lover, enjoy seamless access to your favorite
-            tunes and new sounds anytime, anywhere.
+            personalized recommendations powered by AI. Whether you&#8217;re a
+            casual listener or a music lover, enjoy seamless access to your
+            favorite tunes and new sounds anytime, anywhere.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
           <SlideShow images={Spotify} />
