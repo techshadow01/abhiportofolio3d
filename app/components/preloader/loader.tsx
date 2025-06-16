@@ -19,7 +19,7 @@ const steps = [
 ];
 
 export default function Index() {
-  const { isLoading, loadingPercent } = usePreloader();
+  const { loadingPercent } = usePreloader(); // Removed isLoading since unused
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -28,17 +28,15 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
-    if (index == steps.length - 1) return;
-    setTimeout(
-      () => {
-        setIndex(index + 1);
-      },
-      index == 0 ? 1000 : 150
-    );
+    if (index === steps.length - 1) return;
+    setTimeout(() => {
+      setIndex(index + 1);
+    }, index === 0 ? 1000 : 150);
   }, [index]);
 
-  let percent = (loadingPercent - (loadingPercent % 5)).toFixed(0);
+  const percent = (loadingPercent - (loadingPercent % 5)).toFixed(0); // changed let to const
   console.log(percent);
+
   return (
     <motion.div
       variants={slideUp}
@@ -59,8 +57,8 @@ export default function Index() {
           <div className="fixed top-0 h-[20px] w-screen rounded-r-2xl">
             <div
               className={`absolute h-full bg-white rounded-r-2xl duration-700 ${
-                percent == "100" && "opacity-0 "
-              } `}
+                percent === "100" ? "opacity-0" : ""
+              }`}
               style={{ width: `${percent}%` }}
             ></div>
           </div>
