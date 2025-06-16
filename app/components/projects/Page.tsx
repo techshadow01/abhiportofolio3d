@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React from "react";
 import { useModal } from "../animate/AniModal";
 import {
   Modal,
@@ -36,8 +36,8 @@ const ProjectsSection = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-2">
-        {projects.map((project, index) => (
-          <Modall key={project.src.src} project={project} />
+        {projects.map((project) => (
+          <Modall key={project.id} project={project} />
         ))}
       </div>
     </section>
