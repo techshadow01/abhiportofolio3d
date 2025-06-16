@@ -12,7 +12,7 @@ import {
 import { FloatingDock } from "../animate/FloatingDock";
 import Link from "next/link";
 
-// import SmoothScroll from "../animate/SmoothScroll";
+import SmoothScroll from "../animate/smooth-scroll";
 import projects, { Project } from "./Projects";
 
 const TBox = () => {
@@ -73,7 +73,9 @@ const Modall = ({ project }: { project: Project }) => {
         </ModalTrigger>
 
         <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
-          <ModalInner project={project} />
+          <SmoothScroll isInsideModal={true}>
+            <ModalInner project={project} />
+          </SmoothScroll>
         </ModalBody>
       </Modal>
     </div>
