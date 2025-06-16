@@ -46,9 +46,11 @@ const Page = () => {
           scene="https://prod.spline.design/tr1jyx882bfTUyLC/scene.splinecode"
         />
         <Image
-          className="absolute w-full aspect-square sm:hidden"
+          className="absolute w-full aspect-square -left-3 sm:hidden"
           src={Robot}
           alt="robot"
+           width={400}
+          height={400}
         />
       </div>
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-30">
