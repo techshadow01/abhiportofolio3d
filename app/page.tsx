@@ -6,17 +6,20 @@ import Skills from "./components/skills/Page";
 import Contact from "./components/contact/Page";
 import Experience from "./components/experience/Page";
 import Mnavbar from "./components/navbar/Mnavbar";
+import SmoothScroll from "./components/animate/smooth-scroll";
 
 const page = () => {
   return (
     <div>
-      <Mnavbar />
-      <Navbar />
-      <Home />
-      <Experience />
-      <Skills />
-      <Project />
-      <Contact />
+      <SmoothScroll>
+        <Mnavbar />
+        <Navbar />
+        <Home />
+        <Experience />
+        <Skills />
+        <Project />
+        <Contact />
+      </SmoothScroll>
     </div>
   );
 };
