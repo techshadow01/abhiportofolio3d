@@ -3,3 +3,8 @@
 
 // NOTE: This file should not be edited
 // see https://nextjs.org/docs/app/api-reference/config/typescript for more information.
+declare module "@splidejs/react-splide" {
+  export const Splide: any;
+  export const SplideSlide: any;
+  export const SplideTrack: any;
+}
