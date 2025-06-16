@@ -1,6 +1,6 @@
 "use client";
 
-type tool = {
+export interface tool {
   name: string;
   color: string;
   img: {
@@ -8,7 +8,7 @@ type tool = {
     width: number;
     height: number;
   };
-};
+}
 
 // framework
 import next from "./assets/framework/next.svg";
@@ -91,7 +91,12 @@ export const Other: tool[] = [
   { name: "vscode", color: "bg-[#a3ccee33]", img: vscode },
 ];
 
-export const Skill = [
+export interface skilltype {
+  name: string;
+  src: tool[];
+}
+
+export const Skill: skilltype[] = [
   {
     name: "Framework",
     src: Frame,
