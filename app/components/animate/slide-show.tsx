@@ -47,8 +47,8 @@ const SlideShow = ({ images }: { images: image[] }) => {
                 <Image
                   src={image}
                   alt="screenshot"
-                  width={800}
-                  height={800}
+                  width={1000}
+                  height={1000}
                    loading="lazy"
                   className="w-full rounded-lg h-auto"
                 />
