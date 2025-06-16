@@ -70,13 +70,16 @@ export const ModalBody = ({
 }) => {
   const { open } = useModal();
 
+  const { setOpen } = useModal();
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") setOpen(false);
       });
     }
-  }, []);
+  }, [setOpen]);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -86,7 +89,7 @@ export const ModalBody = ({
   }, [open]);
 
   const modalRef = useRef(null);
-  const { setOpen } = useModal();
+
   useOutsideClick(modalRef, () => setOpen(false));
 
   return (
