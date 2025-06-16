@@ -25,11 +25,9 @@ const Page = () => {
             width={800}
             height={800}
           /> */}
-          <div className="text-9xl max-sm:text-[10vw]">ABHISHEK</div>
-          <div className="h-[1px] w-64 max-sm:w-24 bg-white"></div>
-          <div className="max-sm:text-[2.5vw]">
-            abhishekjangid.3224@gmail.com
-          </div>
+          <div className="text-9xl max-sm:text-[12vw]">ABHISHEK</div>
+          <div className="h-[1px] w-64 max-sm:w-40 bg-white"></div>
+          <div className="max-sm:text-[3vw]">abhishekjangid.3224@gmail.com</div>
         </div>
         {/* <div className="flex flex-col gap-6"> */}
         <HoverEffect items={projects} className="max-sm:w-[300px]" />
