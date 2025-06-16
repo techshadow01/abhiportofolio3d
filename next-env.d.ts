@@ -4,13 +4,30 @@
 // NOTE: This file should not be edited
 // see https://nextjs.org/docs/app/api-reference/config/typescript for more information.
 declare module "@splidejs/react-splide" {
-  import type { FC } from "react";
-  import type {
-    SplideProps as BaseSplideProps,
-    SplideSlideProps as BaseSplideSlideProps,
-  } from "@splidejs/react-splide/dist/types";
+  import { FC, ReactNode } from "react";
+  import {
+    Options as SplideOptions,
+    Splide as SplideInstance,
+  } from "@splidejs/splide";
 
-  export const Splide: FC<BaseSplideProps>;
-  export const SplideSlide: FC<BaseSplideSlideProps>;
-  export const SplideTrack: FC<Record<string, unknown>>;
+  export interface SplideProps {
+    options?: SplideOptions;
+    hasTrack?: boolean;
+    children?: ReactNode;
+    // Add other props if needed, like extensions or ref handling
+  }
+
+  export interface SplideSlideProps {
+    children?: ReactNode;
+    className?: string;
+  }
+
+  export interface SplideTrackProps {
+    children?: ReactNode;
+    className?: string;
+  }
+
+  export const Splide: FC<SplideProps>;
+  export const SplideSlide: FC<SplideSlideProps>;
+  export const SplideTrack: FC<SplideTrackProps>;
 }
