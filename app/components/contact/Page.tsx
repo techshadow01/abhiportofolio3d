@@ -25,7 +25,7 @@ const Page = () => {
             width={800}
             height={800}
           /> */}
-          <div className="text-9xl max-sm:text-[17vw]">ABHISHEK</div>
+          <div className="text-9xl max-sm:text-[13vw]">ABHISHEK</div>
           <div className="h-[1px] w-64 max-sm:w-40 bg-white"></div>
           <div className="max-sm:text-base">abhishekjangid.3224@gmail.com</div>
         </div>
