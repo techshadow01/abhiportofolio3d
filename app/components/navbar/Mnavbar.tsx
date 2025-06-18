@@ -75,7 +75,7 @@ const Mnavbar = () => {
                 return (
                   <Link
                     key={index}
-                    href={`#${item}`}
+                     href={index == 0 ? "#mhome" : `#${item}`}
                     className="hover:text-slate-300 uppercase"
                   >
                     {item}
