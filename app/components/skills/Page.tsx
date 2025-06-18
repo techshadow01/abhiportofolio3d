@@ -20,7 +20,7 @@ const Page = () => {
                   return (
                     <div
                       key={index1}
-                      className="flex items-center rounded-lg bg-white/10 backdrop-blur-2xl p-3 gap-3 text-xl"
+                      className="flex items-center rounded-lg bg-[#1A1A1A] p-3 gap-3 text-xl"
                     >
                       <div
                         className={`p-2 items-center justify-center rounded-lg ${item1.color}`}
