@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 
 const sidebar = () => {
   return (
-    <div className="max-sm:fixed absolute top-5 right-5 flex gap-4 z-50">
+    <div  id="home" className="max-sm:fixed absolute top-5 right-5 flex gap-4 z-50">
       <a href="mailto:abhishekjangid.3224@gmail.com">
         <Mail className="text-white size-9 cursor-pointer rounded-xs" />
       </a>
