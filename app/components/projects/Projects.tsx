@@ -1,4 +1,4 @@
-"use client";
+
 import AceTernityLogo from "../animate/aceternity";
 import SlideShow from "../animate/slide-show";
 import { Button } from "../animate/button";
