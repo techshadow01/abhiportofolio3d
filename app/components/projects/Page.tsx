@@ -27,6 +27,17 @@ const BBox = () => {
   );
 };
 
+const MoreButton = () => {
+  return (
+    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center group-hover:z-10 -z-10 duration-300 scale-50 group-hover:scale-100">
+      <div className="rounded-full bg-white text-black p-2 flex gap-1">
+        Read More
+        <ArrowRight />
+      </div>
+    </div>
+  );
+};
+
 const ProjectsSection = () => {
   return (
     <section id="projects" className="max-w-7xl mx-auto">
@@ -50,15 +61,16 @@ const Modall = ({ project }: { project: Project }) => {
   return (
     <div className="flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="bg-transparent flex justify-center group/modal-btn cursor-pointer ">
+         <ModalTrigger className="bg-transparent flex justify-center group/modal-btn cursor-pointer group">
           <div className="relative w-[400px] h-auto rounded-lg overflow-hidden aspect-[17/10]">
             <Image
-              className="absolute w-full h-full top-0 left-0"
+              className="absolute w-full h-full top-0 left-0 duration-500 group-hover:blur-xs"
               src={project.src}
               alt={project.title}
               width={300}
               height={200}
             />
+            <MoreButton />
             <div className="absolute w-full h-1/2 bottom-0 left-0 pointer-events-none">
               <div className="absolute left-0 bottom-0 rounded-tr-2xl w-fit inline-flex flex-col items-start justify-end white bg-black px-2 ">
                 <TBox />
@@ -71,7 +83,7 @@ const Modall = ({ project }: { project: Project }) => {
             </div>
           </div>
         </ModalTrigger>
-
+        
         <ModalBody className="md:max-w-4xl md:max-h-[80%] overflow-auto">
           <SmoothScroll isInsideModal={true}>
             <ModalInner project={project} />
