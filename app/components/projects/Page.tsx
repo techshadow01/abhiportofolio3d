@@ -14,6 +14,7 @@ import Link from "next/link";
 
 import SmoothScroll from "../animate/smooth-scroll";
 import projects, { Project } from "./Projects";
+import { ArrowRight } from "lucide-react";
 
 const TBox = () => {
   return (
