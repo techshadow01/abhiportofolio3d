@@ -34,8 +34,7 @@ export default function Index() {
     }, index === 0 ? 1000 : 150);
   }, [index]);
 
-  const percent = (loadingPercent - (loadingPercent % 5)).toFixed(0); // changed let to const
-  console.log(percent);
+  const percent = (loadingPercent - (loadingPercent % 5)).toFixed(0);
 
   return (
     <motion.div
