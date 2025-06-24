@@ -35,7 +35,9 @@ const Page = () => {
               Get in touch
             </Link>
           </button>
-          <a className="glow relative z-40 max-sm:z-0 cursor-pointer flex items-center justify-center">
+          <a  href="https://drive.google.com/file/d/1M9lN3gk4HJUaru7AsUENXo9D9RNeFUOr/view?usp=sharing"
+            target="_blank"
+            className="glow relative z-40 max-sm:z-0 cursor-pointer flex items-center justify-center">
             Resume
           </a>
         </div>
