@@ -36,7 +36,7 @@ const Page = () => {
               Get in touch
             </Link>
           </button>
-          <a className="group gap-2 bg-white h-12 rounded-full relative z-40 max-sm:z-0 cursor-pointer flex items-center justify-center px-4">
+          <a className="group gap-2 bg-white h-12 w-full rounded-full relative z-40 max-sm:z-0 cursor-pointer flex items-center justify-center px-4">
               <div className="group-hover:-translate-x-3 duration-500 text-black">
                 Resume
               </div>
