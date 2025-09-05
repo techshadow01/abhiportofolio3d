@@ -48,8 +48,8 @@ const ProjectsSection = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-2">
-        {projects.map((project) => (
-          <Modall key={project.id} project={project} />
+        {projects.map((project,i) => (
+          <Modall key={project.id} i={i} project={project} />
         ))}
       </div>
     </section>
@@ -58,9 +58,9 @@ const ProjectsSection = () => {
 
 //  bg-gradient-to-t from-black via-black/85 to-transparent
 
-const Modall = ({ project,index }: { project: Project;  index: number; }) => {
+const Modall = ({ project,i }: { project: Project;  i: number }) => {
   return (
-    <div className="flex items-center justify-center"   style={{ top: `calc(200px + ${index * 15}px)` }}>
+    <div  className={`max-sm:sticky flex items-center justify-center`}  style={{ top: `calc(200px + ${i * 15}px)` }}>
       <Modal>
          <ModalTrigger className="bg-transparent flex justify-center group/modal-btn cursor-pointer group">
           <div className="relative w-[400px] h-auto rounded-lg overflow-hidden aspect-[17/10]">
@@ -152,6 +152,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
 
