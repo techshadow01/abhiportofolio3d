@@ -58,9 +58,9 @@ const ProjectsSection = () => {
 
 //  bg-gradient-to-t from-black via-black/85 to-transparent
 
-const Modall = ({ project,i }: { project: Project;  i: number; }) => {
+const Modall = ({ project,index }: { project: Project;  index: number; }) => {
   return (
-    <div className="flex items-center justify-center"   style={{ top: `calc(200px + ${i * 15}px)` }}>
+    <div className="flex items-center justify-center"   style={{ top: `calc(200px + ${index * 15}px)` }}>
       <Modal>
          <ModalTrigger className="bg-transparent flex justify-center group/modal-btn cursor-pointer group">
           <div className="relative w-[400px] h-auto rounded-lg overflow-hidden aspect-[17/10]">
@@ -152,5 +152,6 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
