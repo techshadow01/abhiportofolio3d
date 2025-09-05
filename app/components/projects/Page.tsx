@@ -58,7 +58,7 @@ const ProjectsSection = () => {
 
 //  bg-gradient-to-t from-black via-black/85 to-transparent
 
-const Modall = ({ project }: { project: Project }) => {
+const Modall = ({ project,i }: { project: Project;  i: number; }) => {
   return (
     <div className="flex items-center justify-center"   style={{ top: `calc(200px + ${i * 15}px)` }}>
       <Modal>
@@ -152,4 +152,5 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
