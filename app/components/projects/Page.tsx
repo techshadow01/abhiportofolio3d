@@ -60,7 +60,7 @@ const ProjectsSection = () => {
 
 const Modall = ({ project,i }: { project: Project;  i: number }) => {
   return (
-    <div  className={`flex items-center justify-center`}}>
+    <div  className={`flex items-center justify-center`}>
       <Modal>
          <ModalTrigger className="bg-transparent flex justify-center group/modal-btn cursor-pointer group">
           <div className="relative w-[400px] h-auto rounded-lg overflow-hidden aspect-[17/10]">
@@ -152,6 +152,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
 
