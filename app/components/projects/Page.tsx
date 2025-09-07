@@ -49,7 +49,7 @@ const ProjectsSection = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-2">
         {projects.map((project,i) => (
-          <Modall key={project.id} i={i} project={project} />
+          <Modall key={project.id} project={project} />
         ))}
       </div>
     </section>
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
 
 //  bg-gradient-to-t from-black via-black/85 to-transparent
 
-const Modall = ({ project,i }: { project: Project;  i: number }) => {
+const Modall = ({ project }: { project: Project; }) => {
   return (
     <div  className={`flex items-center justify-center`}>
       <Modal>
@@ -152,6 +152,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
 
