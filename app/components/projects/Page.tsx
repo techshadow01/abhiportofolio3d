@@ -48,7 +48,7 @@ const ProjectsSection = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-y-2">
-        {projects.map((project,i) => (
+        {projects.map((project) => (
           <Modall key={project.id} project={project} />
         ))}
       </div>
@@ -152,6 +152,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
 
