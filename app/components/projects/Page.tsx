@@ -42,7 +42,7 @@ const MoreButton = () => {
 const ProjectsSection = () => {
   return (
     <section id="projects" className="max-w-7xl mx-auto">
-       <div className="max-sm:sticky top-[30px] ">
+       <div>
         <h2 className=" bg-clip-text text-6xl font-bold text-center text-transparent md:text-7xl pt-16 bg-gradient-to-b from-black/80 to-black/50 dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-16">
           Projects
         </h2>
@@ -60,7 +60,7 @@ const ProjectsSection = () => {
 
 const Modall = ({ project,i }: { project: Project;  i: number }) => {
   return (
-    <div  className={`max-sm:sticky flex items-center justify-center`}  style={{ top: `calc(180px + ${i * 15}px)` }}>
+    <div  className={`flex items-center justify-center`}}>
       <Modal>
          <ModalTrigger className="bg-transparent flex justify-center group/modal-btn cursor-pointer group">
           <div className="relative w-[400px] h-auto rounded-lg overflow-hidden aspect-[17/10]">
@@ -152,6 +152,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
 
