@@ -10,7 +10,7 @@ const Page = () => {
           Skills
         </h2>
       </div>
-      <div className=" mx-auto max-lg:mx-2 max-w-[77rem]">
+      <div className=" mx-auto max-lg:mx-4 max-w-[77rem]">
         {Skill.map((item: skilltype, index: number) => {
           return (
             <div key={index} className="flex flex-col gap-4 mt-4">
@@ -42,3 +42,4 @@ const Page = () => {
 };
 
 export default Page;
+
