@@ -6,7 +6,7 @@ const Card = ({
   image,
   containerRef,
 }: {
-  style: Object;
+  style: object;
   text?: string;
   image?: string;
   containerRef: RefObject<HTMLDivElement | null>;
