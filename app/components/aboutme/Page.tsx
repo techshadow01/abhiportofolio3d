@@ -9,10 +9,11 @@ import { motion, useScroll, useTransform } from "motion/react";
 import GlobeImage from "../../assets/globe.png";
 
 const About = () => {
-  const grid2Container = useRef();
+  const grid2Container = useRef<HTMLDivElement | null>(null); 
   const { scrollY } = useScroll();
 
   const y = useTransform(scrollY, [0, 1000], [0, -300]);
+
   return (
     <div className="relative h-[650px] max-sm:h-[1000px] max-w-7xl mx-auto">
       <motion.section
@@ -20,26 +21,24 @@ const About = () => {
         style={{ y, position: "absolute", top: 0, left: 0, right: 0 }}
         className="mx-auto"
       >
-        {/* <h2 className="bg-clip-text text-6xl font-bold text-center text-transparent md:text-7xl pt-16 bg-gradient-to-b from-black/80 to-black/50 dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-16">
-          About Me
-        </h2> */}
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem]  mt-12">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
           {/* Grid 1 */}
           <div className="flex items-end grid-default-color grid-1">
             <Image
               src={Coding}
-              alt=""
+              alt="Coding POV"
               className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
             />
             <div className="z-10">
-              <p className="headtext">Hi, I'm Abhishek Jnagid</p>
+              <p className="headtext">Hi, I&apos;m Abhishek Jnagid</p>
               <p className="subtext">
                 Over the years, I have developed my frontend and backend dev
-                skills to deliver dynamic and software and web applications.
+                skills to deliver dynamic software and web applications.
               </p>
             </div>
-            <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
+            <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
           </div>
+
           {/* Grid 2 */}
           <div className="grid-default-color grid-2">
             <div
@@ -91,23 +90,22 @@ const About = () => {
               />
             </div>
           </div>
+
           {/* Grid 3 */}
           <div className="grid-black-color grid-3">
             <div className="z-10 w-[50%]">
               <p className="headtext">Time Zone</p>
               <p className="subtext">
-                I'm based in India, and open to remote work worldwide
+                I&apos;m based in India, and open to remote work worldwide
               </p>
             </div>
-            {/* <figure className="absolute left-[30%] top-[10%]">
-              <Globe />
-            </figure> */}
             <Image
-              className=" absolute right-0 bottom-0"
+              className="absolute right-0 bottom-0"
               src={GlobeImage}
-              alt=""
+              alt="Globe"
             />
           </div>
+
           {/* Grid 4 */}
           <div className="grid-special-color grid-4">
             <div className="flex flex-col items-center justify-center gap-4 size-full">
@@ -117,13 +115,14 @@ const About = () => {
               <CopyEmailButton />
             </div>
           </div>
+
           {/* Grid 5 */}
           <div className="grid-default-color grid-5">
             <div className="z-10 w-[50%]">
-              <p className="headText">Teck Stack</p>
+              <p className="headText">Tech Stack</p>
               <p className="subtext">
                 I specialize in a variety of languages, frameworks, and tools
-                taht allow me to build robust and scalable applications
+                that allow me to build robust and scalable applications.
               </p>
             </div>
             <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
