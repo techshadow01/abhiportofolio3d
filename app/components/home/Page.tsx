@@ -1,3 +1,4 @@
+"use client";
 import { Spotlight } from "../animate/spotlight";
 import ScrollDownIcon from "../animate/scroll-down-icon";
 import Sidebar from "./Sidebar";
@@ -6,12 +7,18 @@ import { ChevronRight, File } from "lucide-react";
 import { BlurIn, BoxReveal, Sleath } from "../animate/homereveal";
 import { AnimatedGradientText } from "../animate/shinytextmagic";
 import Model from "../spline/Model";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const Page = () => {
+  const { scrollY } = useScroll();
+
+  const yOpacity = useTransform(scrollY, [0, 600], [1, 0]);
+  const yScroll = useTransform(scrollY, [0, 1000], [0, 300]);
   return (
-    <div
+    <motion.div
       id="mhome"
       className="flex max-sm:flex-col-reverse  items-center justify-between max-sm:justify-center max-sm:gap-5 h-[calc(100vh-50px)] "
+      style={{ y: yScroll, opacity: yOpacity }}
     >
       <div className="flex flex-col ml-[10%] max-sm:ml-0 max-sm:w-[90%] gap-6">
         <Sleath
@@ -87,7 +94,7 @@ const Page = () => {
       </div>
       <ScrollDownIcon />
       <Sidebar />
-    </div>
+    </motion.div>
   );
 };
 
