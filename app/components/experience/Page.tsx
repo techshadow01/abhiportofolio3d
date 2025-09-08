@@ -7,12 +7,12 @@ const data = [
     title: "2023",
     content: (
       <div>
-        <p className="mb-8 text-5xl max-sm:text-4xl font-normal bg-gradient-to-r from-[#E2CBFF] via-[#393BB2] to-[#E2CBFF] inline-block text-transparent bg-clip-text">
+         <div className="mb-8 text-5xl max-sm:text-4xl font-semibold bg-gradient-to-r from-[#E2CBFF] via-[#393BB2] to-[#E2CBFF] inline-block text-transparent bg-clip-text">
           Full Stack Developer Intern
-        </p>
-        <p className="mb-8 text-4xl max-sm:text-2xl font-normal text-white">
+        </div>
+        <div className="mb-8 text-4xl max-sm:text-2xl font-normal text-gray-400">
           &#40; Learn and Build &#41;
-        </p>
+        </div>
         <p className="flex gap-3">
           <div className="bg-white rounded-full size-2 mt-3"></div>
           <p className="mb-8 text-lg max-sm:text-base font-normal text-white">
@@ -65,3 +65,4 @@ const Page = () => {
 };
 
 export default Page;
+
