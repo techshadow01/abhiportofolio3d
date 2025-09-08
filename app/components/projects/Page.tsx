@@ -32,7 +32,7 @@ const MoreButton = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center group-hover:z-10 -z-10 duration-300 scale-50 group-hover:scale-100">
       <div className="rounded-full bg-white text-black p-2 flex gap-1">
-        Read More
+        View Details
         <ArrowRight />
       </div>
     </div>
@@ -152,6 +152,7 @@ const ProjectContents = ({ project }: { project: Project }) => {
     </div>
   );
 };
+
 
 
 
