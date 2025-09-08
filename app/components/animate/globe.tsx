@@ -67,9 +67,17 @@ interface GlobeInstance {
   destroy: () => void;
 }
 
+interface GlobeRenderState extends Record<string, any> {
+  phi: number;
+  theta: number;
+  width: number;
+  height: number;
+}
 export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
-  let phi = 0;
+  const phi = 0;
   let width = 0;
+  const phiref = useRef(0);
+  let widthref = useRef(0);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef<number>(0);
@@ -110,11 +118,12 @@ export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
       ...config,
       width: width * 2,
       height: width * 2,
-      onRender: (state: any) => {
-        if (!pointerInteracting.current) phi += 0.005;
-        state.phi = phi + rs.get();
-        state.width = width * 2;
-        state.height = width * 2;
+      onRender: (state: Record<string, any>) => {
+        const globeState = state as GlobeRenderState;
+        if (!pointerInteracting.current) phiref.current += 0.005;
+        globeState.phi = phiref.current + rs.get();
+        globeState.width = widthref.current * 2;
+        globeState.height = widthref.current * 2;
       },
     });
 
