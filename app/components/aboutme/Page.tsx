@@ -15,7 +15,7 @@ const About = () => {
   const y = useTransform(scrollY, [0, 1000], [0, -300]);
 
   return (
-    <div className="relative h-[650px] max-sm:h-[1000px] max-w-7xl mx-auto">
+    <div className="relative h-[650px] max-sm:h-[1000px] max-w-7xl mx-auto text-white">
       <motion.section
         id="about"
         style={{ y, position: "absolute", top: 0, left: 0, right: 0 }}
@@ -136,3 +136,4 @@ const About = () => {
 };
 
 export default About;
+
