@@ -158,13 +158,11 @@ export const Sleath = ({
   duration = 0.6,
   className,
   x = 0,
-  y = 0,
 }: {
   children: React.ReactNode;
   delay?: number;
   duration?: number;
   className?: string;
-  y?: number;
   x?: number;
 }) => {
   return (
@@ -182,3 +180,4 @@ export const Sleath = ({
     </motion.div>
   );
 };
+
