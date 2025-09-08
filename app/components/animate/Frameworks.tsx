@@ -36,15 +36,12 @@ export function Frameworks() {
   );
 }
 
-// const Icon = ({ src }) => (
-//   <img src={src} className="duration-200 rounded-sm hover:scale-110" />
-// );
 interface IconProps {
   src: string;
 }
 
 const Icon: React.FC<IconProps> = ({ src }) => {
-  const alt = src.split("/").pop().split(".")[0];
+   const alt = src.split("/").pop()?.split(".")[0] ?? "icon";
   return (
     <Image
       src={src}
