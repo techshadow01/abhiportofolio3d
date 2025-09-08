@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import React, { ReactNode } from "react";
 
-interface OrbitingCirclesProps {
+interface OrbitingCirclesProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: ReactNode;
   reverse?: boolean;
@@ -10,7 +10,6 @@ interface OrbitingCirclesProps {
   path?: boolean;
   iconSize?: number;
   speed?: number;
-  [key: string]: any; // For extra props
 }
 
 export function OrbitingCircles({
@@ -46,14 +45,12 @@ export function OrbitingCircles({
         const angle = (360 / React.Children.count(children)) * index;
         return (
           <div
-            style={
-              {
-                "--duration": calculatedDuration,
-                "--radius": radius,
-                "--angle": angle,
-                "--icon-size": `${iconSize}px`,
-              } as React.CSSProperties
-            }
+            style={{
+              "--duration": calculatedDuration,
+              "--radius": radius,
+              "--angle": angle,
+              "--icon-size": `${iconSize}px`,
+            } as React.CSSProperties}
             className={twMerge(
               `absolute flex size-[var(--icon-size)] transform-gpu animate-orbit items-center justify-center rounded-full ${
                 reverse ? "[animation-direction:reverse]" : ""
