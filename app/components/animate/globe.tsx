@@ -16,7 +16,7 @@ type Marker = {
 type GlobeConfig = {
   width: number;
   height: number;
-  onRender: (state: any) => void;
+  onRender: (state: GlobeRenderState) => void;
   devicePixelRatio: number;
   phi: number;
   theta: number;
@@ -29,6 +29,14 @@ type GlobeConfig = {
   glowColor: [number, number, number];
   markers: Marker[];
 };
+
+interface GlobeRenderState {
+  phi: number;
+  theta: number;
+  width: number;
+  height: number;
+  [key: string]: unknown; // Allows other dynamic properties
+}
 
 const GLOBE_CONFIG: GlobeConfig = {
   width: 800,
@@ -67,16 +75,9 @@ interface GlobeInstance {
   destroy: () => void;
 }
 
-interface GlobeRenderState extends Record<string, any> {
-  phi: number;
-  theta: number;
-  width: number;
-  height: number;
-}
 export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
-  let width = 0;
-  const phiref = useRef(0);
-  let widthref = useRef(0);
+  const phi = useRef(0);
+  const width = useRef(0);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef<number>(0);
@@ -106,7 +107,7 @@ export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
   useEffect(() => {
     const onResize = () => {
       if (canvasRef.current) {
-        width = canvasRef.current.offsetWidth;
+        width.current = canvasRef.current.offsetWidth;
       }
     };
 
@@ -115,14 +116,15 @@ export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
 
     const globe: GlobeInstance = createGlobe(canvasRef.current!, {
       ...config,
-      width: width * 2,
-      height: width * 2,
-      onRender: (state: Record<string, any>) => {
+      width: width.current * 2,
+      height: width.current * 2,
+      onRender: (state) => {
         const globeState = state as GlobeRenderState;
-        if (!pointerInteracting.current) phiref.current += 0.005;
-        globeState.phi = phiref.current + rs.get();
-        globeState.width = widthref.current * 2;
-        globeState.height = widthref.current * 2;
+
+        if (!pointerInteracting.current) phi.current += 0.005;
+        globeState.phi = phi.current + rs.get();
+        globeState.width = width.current * 2;
+        globeState.height = width.current * 2;
       },
     });
 
@@ -150,10 +152,7 @@ export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
           "size-[30rem] opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         )}
         ref={canvasRef}
-        onPointerDown={(e) => {
-          pointerInteracting.current = e.clientX;
-          updatePointerInteraction(e.clientX);
-        }}
+        onPointerDown={(e) => updatePointerInteraction(e.clientX)}
         onPointerUp={() => updatePointerInteraction(null)}
         onPointerOut={() => updatePointerInteraction(null)}
         onMouseMove={(e) => updateMovement(e.clientX)}
