@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion } from "framer-motion";
+import { opacity } from "../preloader/anim";
 
 type SlideTabsProps = {
   labels: string[];
@@ -12,6 +13,7 @@ type Position = { left: number; width: number; opacity: number };
 interface TabsProps {
   children: ReactNode;
   setPosition: React.Dispatch<React.SetStateAction<Position>>;
+  i: number;
 }
 
 export const SlideTabs: React.FC<SlideTabsProps> = ({ className, labels }) => {
@@ -45,10 +47,10 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({ className, labels }) => {
     >
       {labels.map((item, index) => {
         return (
-          <Tab key={index} setPosition={setPosition}>
-            <a href={`#${item}`} className={className}>
+          <Tab key={index} i={index} setPosition={setPosition}>
+            <motion.a href={`#${item}`} className={className}>
               {item}
-            </a>
+            </motion.a>
           </Tab>
         );
       })}
@@ -58,11 +60,11 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({ className, labels }) => {
   );
 };
 
-const Tab: React.FC<TabsProps> = ({ children, setPosition }) => {
+const Tab: React.FC<TabsProps> = ({ children, setPosition, i }) => {
   const ref = useRef<HTMLLIElement>(null);
 
   return (
-    <li
+    <motion.li
       ref={ref}
       onMouseEnter={() => {
         if (!ref?.current) return;
@@ -76,9 +78,15 @@ const Tab: React.FC<TabsProps> = ({ children, setPosition }) => {
         });
       }}
       className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      initial={{ opacity: 0, y: -150 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ duration: 2, delay: i * 0.3 + 3 }}
     >
       {children}
-    </li>
+    </motion.li>
   );
 };
 
