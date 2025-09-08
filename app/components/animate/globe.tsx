@@ -74,7 +74,6 @@ interface GlobeRenderState extends Record<string, any> {
   height: number;
 }
 export function Globe({ className, config = GLOBE_CONFIG }: GlobeProps) {
-  const phi = 0;
   let width = 0;
   const phiref = useRef(0);
   let widthref = useRef(0);
