@@ -24,6 +24,7 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({ className, labels }) => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
+  //is scrolled
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 200);
@@ -42,7 +43,7 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({ className, labels }) => {
       }}
       className={`relative mx-auto flex  w-fit rounded-full p-1  backdrop-blur-2xl ${
         isScrolled && "border"
-      } border-gray-600`}
+      } border-gray-600 `}
     >
       {labels.map((item, index) => {
         return (
@@ -76,7 +77,7 @@ const Tab: React.FC<TabsProps> = ({ children, setPosition, i }) => {
           opacity: 1,
         });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase mix-blend-difference md:px-5 md:py-3 md:text-base "
       initial={{ opacity: 0, y: -150 }}
       animate={{
         opacity: 1,
@@ -103,8 +104,7 @@ const Cursor: React.FC<CursorProps> = ({ position }) => {
       animate={{
         ...position,
       }}
-      className="absolute z-0 h-7 rounded-full bg-white md:h-12"
+      className={`absolute z-0 h-7 rounded-full bg-white md:h-12`}
     />
   );
 };
-
