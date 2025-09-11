@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 type SlideTabsProps = {
   labels: string[];
@@ -108,3 +108,4 @@ const Cursor: React.FC<CursorProps> = ({ position }) => {
     />
   );
 };
+
