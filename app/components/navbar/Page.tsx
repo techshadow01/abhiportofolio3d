@@ -11,7 +11,7 @@ const Page = () => {
     const handleScroll = () => {
       setIsLastSection(window.scrollY > 6400);
         if (window.scrollY > 6400) {
-        console.log("scrolled");
+        console.log("scrolled",window.scrollY);
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -29,4 +29,5 @@ const Page = () => {
 };
 
 export default Page;
+
 
