@@ -2,9 +2,9 @@ import React from "react";
 import { HoverEffect } from "../animate/contacttile";
 import { projects } from "./contactdata";
 import { BoxReveal } from "../animate/boxreveal";
-import Image from "next/image";
-import Wave from "../../assets/wave.svg";
-import { Particles } from "../animate/particles";
+// import Image from "next/image";
+// import Wave from "../../assets/wave.svg";
+// import { Particles } from "../animate/particles";
 
 const Page = () => {
   return (
@@ -32,15 +32,16 @@ const Page = () => {
         </div>
         <HoverEffect items={projects} className="max-sm:w-[300px]" />
       </div>
-       <Image className=" w-full h-full" src={Wave} alt="" />
+{/*        <Image className=" w-full h-full" src={Wave} alt="" />
       <div className=" w-full h-screen bg-white overflow-hidden">
         <Particles color={"#000000"} quantity={150} />
-      </div>
+      </div> */}
     </div>
   );
 };
 
 export default Page;
+
 
 
 
