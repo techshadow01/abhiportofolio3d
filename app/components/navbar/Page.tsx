@@ -10,6 +10,9 @@ const Page = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsLastSection(window.scrollY > 6400);
+        if (window.scrollY > 6400) {
+        console.log("scrolled");
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,3 +29,4 @@ const Page = () => {
 };
 
 export default Page;
+
