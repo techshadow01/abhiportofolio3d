@@ -12,7 +12,7 @@ const Page = () => {
       <h2 className="bg-clip-text text-6xl font-bold text-center text-transparent md:text-7xl pt-16 bg-gradient-to-b from-black/80 to-black/50 dark:bg-gradient-to-b dark:from-white/80 dark:to-white/20 dark:bg-opacity-50 mb-16 max-sm:mb-0">
         Get in touch
       </h2>
-      <div className="sticky top-0 flex max-sm:flex-col items-center justify-around max-sm:justify-center max-sm:h-full max-sm:h-screen mix-blend-difference">
+      <div className="sticky top-0 flex max-sm:flex-col items-center justify-around max-sm:justify-center max-sm:h-full max-sm:h-screen">
         <div className="relative overflow-hidden w-full max-sm:w-fit max-w-[800px] aspect-square max-sm:aspect-auto flex flex-col items-center justify-center gap-3">
           <BoxReveal
             className="text-9xl max-sm:text-[12vw]"
@@ -41,6 +41,7 @@ const Page = () => {
 };
 
 export default Page;
+
 
 
 
