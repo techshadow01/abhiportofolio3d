@@ -4,6 +4,7 @@ import { projects } from "./contactdata";
 import { BoxReveal } from "../animate/boxreveal";
 import Image from "next/image";
 import Wave from "../../assets/wave.svg";
+import { Particles } from "../animate/particles";
 
 const Page = () => {
   return (
@@ -40,4 +41,5 @@ const Page = () => {
 };
 
 export default Page;
+
 
