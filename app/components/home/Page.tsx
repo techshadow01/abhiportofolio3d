@@ -88,7 +88,7 @@ const Page = () => {
       <Model />
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-30">
         <Spotlight
-          className="absolute top-14 z-30 right-0 rotate-90"
+          className="absolute max-sm:hidden top-14 z-30 right-0 rotate-90"
           fill={"#cccccc"}
         />
       </div>
@@ -99,3 +99,4 @@ const Page = () => {
 };
 
 export default Page;
+
