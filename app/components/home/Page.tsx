@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ChevronRight, File } from "lucide-react";
 import { BlurIn, BoxReveal, Sleath } from "../animate/homereveal";
 import { AnimatedGradientText } from "../animate/shinytextmagic";
-import Model from "../spline/Model";
+// import Model from "../spline/Model";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const Page = () => {
@@ -85,7 +85,7 @@ const Page = () => {
           </BoxReveal>
         </div>
       </div>
-      <Model />
+      {/* <Model /> */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-30">
         <Spotlight
           className="absolute max-sm:hidden top-14 z-30 right-0 rotate-90"
@@ -99,4 +99,5 @@ const Page = () => {
 };
 
 export default Page;
+
 
